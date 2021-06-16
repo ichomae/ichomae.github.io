@@ -29,14 +29,14 @@
 <script src="function.js" defer></script>
 </head>
 
-<body>
+<body id="index">
 	<header>
-		<a class="site-title" href="index.html">
+		<a class="header-title" href="index.html">
 			ichomae
 		</a>
 		<nav>
 			<input type="checkbox" id="menu-btn-check">
-			<label for="menu-btn-check" class="menu-btn"><span></span></label>
+			<label for="menu-btn-check" class="menu-btn"><span class="menu-btn-icon"></span></label>
 			<div class="menu-content">
 				<ul>
 					<li>
@@ -62,22 +62,22 @@
 		</nav>
 	</header>
 	<main>
-		<h1 class="top-title">いっちょまえな<br class="br-sp"/>ホームページ</h1>
+		<h1>いっちょまえな<br class="br-sp"/>ホームページ</h1>
 		<section class="category">
 			<h2>ichomae家の日々</h2>
 			<p>育児ネタを中心に描きためています</p>
-			<div class="image-grid" id="days-latest">
+			<div class="image-list-outer" id="days-latest">
 				<!--画像リスト予定地-->
 			</div>
-			<div class="next-btn">
-				<a href="days.html">もっと見る</a>
+			<div class="next-btn-outer">
+				<a class="next-btn" href="days.html">もっと見る</a>
 			</div>
 		</section>
 		<section class="category">
 			<h2>ichomaeな動物たち</h2>
 			<p>親近感が湧くような、<br class="br-sp"/>ゆるい動物を描いています</p>
-			<div class="next-btn">
-				<a href="animals.html">イラストを見る</a>
+			<div class="next-btn-outer">
+				<a class="next-btn" href="animals.html">イラストを見る</a>
 			</div>
 		</section>
 		<section class="category">
@@ -96,24 +96,24 @@
 		<section class="category">
 			<h2>LINEスタンプ</h2>
 			<p>ブタ、ヒツジ、ペンギンの<br class="br-sp"/>LINEスタンプを販売中です</p>
-			<div class="next-btn">
-				<a href="https://line.me/S/shop/sticker/author/2103262" target="_blank">スタンプショプへ</a>
+			<div class="next-btn-outer">
+				<a class="next-btn" href="https://line.me/S/shop/sticker/author/2103262" target="_blank">スタンプショプへ</a>
 			</div>
 		</section>
 		<section class="category">
 			<h2>SUZURI</h2>
 			<p>Tシャツ等のグッズを販売しています</p>
-			<div class="next-btn">
-				<a href="https://suzuri.jp/ichomae" target="_blank">ichomaeのショップへ</a>
+			<div class="next-btn-outer">
+				<a class="next-btn" href="https://suzuri.jp/ichomae" target="_blank">ichomaeのショップへ</a>
 			</div>
 		</section>
 		<div id="page-top"></div>
 	</main>
 	<footer>
-		<a class="site-title" href="#">
+		<a class="footer-title" href="index.html">
 			ichomae
 		</a>
-		<small>© 2021 ichomae</small>
+		<small class="footer-copyright">© 2021 ichomae</small>
 	</footer>
 </body>
 </html>

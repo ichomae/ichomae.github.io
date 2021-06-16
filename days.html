@@ -29,14 +29,14 @@
 <script src="function.js" defer></script>
 </head>
 
-<body>
+<body id="days">
 	<header>
-		<a class="site-title" href="index.html">
+		<a class="header-title" href="index.html">
 			ichomae
 		</a>
 		<nav>
 			<input type="checkbox" id="menu-btn-check">
-			<label for="menu-btn-check" class="menu-btn"><span></span></label>
+			<label for="menu-btn-check" class="menu-btn"><span class="menu-btn-icon"></span></label>
 			<div class="menu-content">
 				<ul>
 					<li>
@@ -62,24 +62,24 @@
 		</nav>
 	</header>
 	<main>
-		<h1>ichomae家の日々</h1>
+		<h1>ichomae家の<br class="br-sp"/>日々</h1>
 		<section class="category">
 			<h2 id="days-monthly-h2"></h2>
 			<div class="other-month">
 				<label for="monthly-select">他の月を見る</label>
 				<select name="month" id="monthly-select"></select>
 			</div>
-			<div class="image-grid" id="days-monthly">
+			<div class="image-list-outer" id="days-monthly">
 				<!--画像リスト予定地-->
 			</div>
 		</section>
 		<div id="page-top"></div>
 	</main>
 	<footer>
-		<a class="site-title" href="#">
+		<a class="footer-title" href="index.html">
 			ichomae
 		</a>
-		<small>© 2021 ichomae</small>
+		<small class="footer-copyright">© 2021 ichomae</small>
 	</footer>
 </body>
 </html>

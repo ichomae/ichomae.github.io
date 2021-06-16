@@ -1,8 +1,17 @@
 window.addEventListener('DOMContentLoaded', function() {
+	//body取得
+	const body = document.getElementsByTagName('body')[0];
+	const bodyId = body.id;
+
+	//レスポンシブ用
+	const windowW = window.innerWidth;
+	(windowW <= 640) ? body.classList.add('sp') : body.classList.add('pc');
+	
 	//画像のリスト作成
 	function createList(month, imgList, div) {
 		div.innerHTML = "";
-		const ul = document.createElement('ul')
+		const ul = document.createElement('ul');
+		ul.classList.add('image-list');
 		for (const elem of imgList) {
 			const li = document.createElement('li');
 			const span = document.createElement('span');
@@ -24,7 +33,7 @@ window.addEventListener('DOMContentLoaded', function() {
 				const lineUrl = elem.line;
 				const suzuriUrl = elem.suzuri;
 				const divIcon = document.createElement('p');
-				divIcon.classList.add('icon-btn-box');
+				divIcon.classList.add('icon-btn-outer');
 				if (lineUrl != '') {
 					const lineBtn = document.createElement('a');
 					lineBtn.href = 'https://line.me/S/sticker/' + lineUrl;
@@ -48,7 +57,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	};
 	
 	//トップページ
-	if(document.getElementById('days-latest') != null) {
+	if(bodyId == 'index') {
 		const month = daysData[0].month;
 		const imgList = daysData[0].imgList.slice(0, 3);
 		const div = document.getElementById('days-latest');
@@ -57,7 +66,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	}
 	
 	//日々のページ
-	if(document.getElementById('days-monthly') != null) {
+	if(bodyId == 'days') {
 		let month = daysData[0].month;
 		let imgList = daysData[0].imgList;
 		//月の文字列作成
@@ -96,8 +105,8 @@ window.addEventListener('DOMContentLoaded', function() {
 	}
 	
 	//動物たちのページ
-	if(document.getElementById('animals') != null) {
-		const divParent = document.getElementById('animals');
+	if(bodyId == 'animals') {
+		const divParent = document.getElementById('animals-container');
 		const divBox = document.createElement('div');
 		for (const elem of animalsData) {
 			const section = document.createElement('section');
@@ -107,7 +116,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			const p = document.createElement('p');
 			p.innerText = elem.p;
 			const div = document.createElement('div');
-			div.classList.add('image-grid');
+			div.classList.add('image-list-outer');
 			const imgList = elem.imgList;
 			//画像リスト作成
 			createList('animals', imgList, div);

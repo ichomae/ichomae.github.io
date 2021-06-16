@@ -1,15 +1,15 @@
 /* Modifying */
 *, *::before, *::after {box-sizing: border-box;}
-ul[class], ol[class] {padding: 0;}
-body, h1, h2, h3, h4, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd {margin: 0;}
-ul[class], ol[class] {list-style: none;}
+ul {padding: 0;}
+body, h1, h2, p, ul, li {margin: 0;}
+ul{list-style: none;}
 a:not([class]) {text-decoration-skip-ink: auto;}
-img {max-width: 100%;display: block;}
-input, button, textarea, select {font: inherit;}
+select {font: inherit;}
 @media (prefers-reduced-motion: reduce) {* {animation-duration: 0.01ms !important;animation-iteration-count: 1 !important;transition-duration: 0.01ms !important;scroll-behavior: auto !important;}}
+
 /*.Responsive */
-@media screen and (min-width: 650px){.br-sp { display:none; }}
-@media screen and (max-width: 650px){.br-sp { display:block; }}
+.br-sp {display:none;}
+.sp .br-sp {display:block;}
 
 /* Style */
 html {
@@ -21,9 +21,6 @@ body {
 	text-rendering: optimizeSpeed;
 	min-height: 100vh;
 	width: 100vw;
-	display:flex;
-	flex-direction: column;
-	align-items: center;
 	background-color: white;
 }
 
@@ -35,14 +32,16 @@ header {
 	margin-bottom: 3rem;
 }
 
-.site-title {
+.header-title {
+	padding-left: 1rem;
 	font-size: 1.5rem;
-	margin: auto 1rem;
+	line-height: 4rem;
 	text-decoration: none;
 	color: black;
 	font-family: 'Yusei Magic', sans-serif;
 }
 
+/*.Nav */
 .menu-btn {
 	position: sticky;
 	top: 0;
@@ -55,9 +54,9 @@ header {
 	z-index: 90;
 	background-color: white;
 }
-.menu-btn span,
-.menu-btn span:before,
-.menu-btn span:after {
+.menu-btn-icon,
+.menu-btn-icon:before,
+.menu-btn-icon:after {
 	content: '';
 	display: block;
 	height: 0.2rem;
@@ -66,21 +65,21 @@ header {
 	background-color: black;
 	position: absolute;
 }
-.menu-btn span:before {
+.menu-btn-icon:before {
 	bottom: 0.5rem;
 }
-.menu-btn span:after {
+.menu-btn-icon:after {
 	top: 0.5rem;
 }
 
-#menu-btn-check:checked ~ .menu-btn span {
+#menu-btn-check:checked ~ .menu-btn .menu-btn-icon {
 	background-color: rgba(255, 255, 255, 0);
 }
-#menu-btn-check:checked ~ .menu-btn span::before {
+#menu-btn-check:checked ~ .menu-btn .menu-btn-icon::before {
 	bottom: 0;
 	transform: rotate(45deg);
 }
-#menu-btn-check:checked ~ .menu-btn span::after {
+#menu-btn-check:checked ~ .menu-btn .menu-btn-icon::after {
 	top: 0;
 	transform: rotate(-45deg);
 }
@@ -133,10 +132,6 @@ header {
 	top: 0.8rem;
 }
 
-main {
-	flex: 1;
-}
-
 h1 {
 	font-size: 3rem;
 	text-align: center;
@@ -144,11 +139,11 @@ h1 {
 	padding-bottom: 5rem;
 }
 
-.top-title {
+#index h1 {
 	padding-bottom: 0;
 }
 
-.top-title::after {
+#index h1::after {
 	content: '';
 	display: block;
 	width: 100vw;
@@ -160,40 +155,37 @@ h1 {
 	margin-bottom: 5rem;
 }
 
-.page-title {
-	margin-bottom: 5rem;
-}
-
 section {
-	max-width: 60rem;
+	width: 90vw;
+	max-width: 70rem;
 	margin: 0 auto;
 }
 
 .category {
 	text-align: center;
-	margin-bottom: 5rem;
+	padding-bottom: 5rem;
 }
 
 h2 {
 	font-size: 2rem;
-	margin-bottom: 1rem;
+	padding-bottom: 1rem;
 	font-family: 'Yusei Magic', sans-serif;
 }
 
 p {
-	margin-bottom: 1rem;
+	padding-bottom: 1rem;
+}
+
+.next-btn-outer {
+	padding-top: 2rem;
 }
 
 .next-btn {
-	padding-top: 3rem;
-}
-
-.next-btn a {
 	display: inline-block;
 	width: 14rem;
 	height: 3rem;
-	border: solid 0.1rem black;
 	padding: 0.5rem 0;
+	border: solid 0.1rem black;
 	border-radius: 1.5rem;
 	text-decoration: none;
 	color: black;
@@ -207,7 +199,7 @@ p {
 	background-position: center;
 }
 
-.icon-btn-box {
+.icon-btn-outer {
 	padding: 0.5rem 4rem 0 4rem;
 	display: flex;
 	justify-content: space-around;
@@ -233,62 +225,66 @@ p {
 	background-image: url('img/iconSuzuri.png');
 }
 
-footer {
-	width: 100vw;
-	height: 4rem;
-	display: flex;
-}
-
-footer small {
-	line-height: 4rem;
-	flex: 1;
-	text-align: right;
-	padding-right: 2rem;
-}
-
-.image-grid ul{
-	list-style: none;
+.pc .image-list {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 }
 
-.image-grid ul li {
-	width: 17rem;
+#index.sp .image-list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.image-list li {
 	margin-bottom: 2rem;
+}
+
+.pc .image-list li {
+	width: 30%;
+}
+
+#index.sp .image-list li {
+	flex: 1;
+}
+
+#index.sp .image-list-outer .days-image-p {
+	display: none;
 }
 
 .days-image {
 	display: inline-block;
-	width: 15rem;
-	height: 25rem;
+	width: 100%;
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
+}
+
+.days-image:before {
+	content: "";
+	display: inline-block;
+	padding-top: 193%;
 }
 
 .animals-image {
 	display: inline-block;
-	width: 15rem;
-	height: 15rem;
+	width: 90%;
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-.animals-image-p {
-	margin-bottom: 0;
-}
-
-.other-month {
-	display: block;
-	padding: 1rem 0;
+.animals-image:before {
+	content: "";
+	display: inline-block;
+	padding-top: 100%;
 }
 
 .animals-shop {
 	text-align: center;
-	margin-bottom: 5rem;
+	padding-bottom: 5rem;
 }
 
 .animals-shop-icon {
@@ -303,6 +299,33 @@ footer small {
 	background-position: left;
 	padding: 0 1rem 0 2.5rem;
 	color: gray;
+}
+
+.other-month {
+	display: block;
+	padding: 1rem 0;
+}
+
+footer {
+	width: 100vw;
+	height: 4rem;
+	display: flex;
+}
+
+.footer-title {
+	padding-left: 1rem;
+	font-size: 1.5rem;
+	line-height: 4rem;
+	text-decoration: none;
+	color: black;
+	font-family: 'Yusei Magic', sans-serif;
+}
+
+.footer-copyright {
+	line-height: 4rem;
+	flex: 1;
+	text-align: right;
+	padding-right: 2rem;
 }
 
 #page-top {
