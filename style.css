@@ -1,0 +1,322 @@
+/* Modifying */
+*, *::before, *::after {box-sizing: border-box;}
+ul[class], ol[class] {padding: 0;}
+body, h1, h2, h3, h4, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd {margin: 0;}
+ul[class], ol[class] {list-style: none;}
+a:not([class]) {text-decoration-skip-ink: auto;}
+img {max-width: 100%;display: block;}
+input, button, textarea, select {font: inherit;}
+@media (prefers-reduced-motion: reduce) {* {animation-duration: 0.01ms !important;animation-iteration-count: 1 !important;transition-duration: 0.01ms !important;scroll-behavior: auto !important;}}
+/*.Responsive */
+@media screen and (min-width: 650px){.br-sp { display:none; }}
+@media screen and (max-width: 650px){.br-sp { display:block; }}
+
+/* Style */
+html {
+	font: 100% / 1.5 sans-serif;
+}
+
+body {
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	min-height: 100vh;
+	width: 100vw;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: white;
+}
+
+header {
+	width: 100vw;
+	height: 4rem;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 3rem;
+}
+
+.site-title {
+	font-size: 1.5rem;
+	margin: auto 1rem;
+	text-decoration: none;
+	color: black;
+	font-family: 'Yusei Magic', sans-serif;
+}
+
+.menu-btn {
+	position: sticky;
+	top: 0;
+	right: 0;
+	display: flex;
+	height: 4rem;
+	width: 4rem;
+	justify-content: center;
+	align-items: center;
+	z-index: 90;
+	background-color: white;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+	content: '';
+	display: block;
+	height: 0.2rem;
+	width: 1.5rem;
+	border-radius: 0.2rem;
+	background-color: black;
+	position: absolute;
+}
+.menu-btn span:before {
+	bottom: 0.5rem;
+}
+.menu-btn span:after {
+	top: 0.5rem;
+}
+
+#menu-btn-check:checked ~ .menu-btn span {
+	background-color: rgba(255, 255, 255, 0);
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+	bottom: 0;
+	transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+	top: 0;
+	transform: rotate(-45deg);
+}
+
+#menu-btn-check {
+	display: none;
+}
+
+.menu-content {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 100%;
+	z-index: 80;
+	background-color: white;
+	transition: all 0.5s;
+}
+
+#menu-btn-check:checked ~ .menu-content {
+	left: 0;
+}
+
+.menu-content ul {
+	padding: 5rem 2rem 0;
+}
+.menu-content ul li {
+	list-style: none;
+}
+.menu-content ul li a {
+	display: block;
+	width: 100%;
+	font-size: 1.2rem;
+	color: black;
+	text-decoration: none;
+	padding: 0.5rem 3rem;
+	position: relative;
+	text-align: right;
+	font-family: 'Yusei Magic', sans-serif;
+}
+.menu-content ul li a::before {
+	content: "";
+	width: 1rem;
+	height: 1rem;
+	border-top: solid 0.2rem black;
+	border-right: solid 0.2rem black;
+	transform: rotate(45deg);
+	position: absolute;
+	right: 1rem;
+	top: 0.8rem;
+}
+
+main {
+	flex: 1;
+}
+
+h1 {
+	font-size: 3rem;
+	text-align: center;
+	font-family: 'Yusei Magic';
+	padding-bottom: 5rem;
+}
+
+.top-title {
+	padding-bottom: 0;
+}
+
+.top-title::after {
+	content: '';
+	display: block;
+	width: 100vw;
+	height: 42vw;
+	background-image: url('img/main.svg');
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	margin-bottom: 5rem;
+}
+
+.page-title {
+	margin-bottom: 5rem;
+}
+
+section {
+	max-width: 60rem;
+	margin: 0 auto;
+}
+
+.category {
+	text-align: center;
+	margin-bottom: 5rem;
+}
+
+h2 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	font-family: 'Yusei Magic', sans-serif;
+}
+
+p {
+	margin-bottom: 1rem;
+}
+
+.next-btn {
+	padding-top: 3rem;
+}
+
+.next-btn a {
+	display: inline-block;
+	width: 14rem;
+	height: 3rem;
+	border: solid 0.1rem black;
+	padding: 0.5rem 0;
+	border-radius: 1.5rem;
+	text-decoration: none;
+	color: black;
+}
+
+.icon-prof {
+	height: 5rem;
+	background-image: url('img/iconIchomae.svg');
+	background-size: 5rem 5rem;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.icon-btn-box {
+	padding: 0.5rem 4rem 0 4rem;
+	display: flex;
+	justify-content: space-around;
+	height: 2.5rem;
+}
+
+.icon-btn {
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	background-size: 2rem;
+}
+
+.btn-twitter {
+	background-image: url('img/iconTwitter.svg');
+}
+
+.btn-line {
+	background-image: url('img/iconLine.png');
+}
+
+.btn-suzuri {
+	background-image: url('img/iconSuzuri.png');
+}
+
+footer {
+	width: 100vw;
+	height: 4rem;
+	display: flex;
+}
+
+footer small {
+	line-height: 4rem;
+	flex: 1;
+	text-align: right;
+	padding-right: 2rem;
+}
+
+.image-grid ul{
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.image-grid ul li {
+	width: 17rem;
+	margin-bottom: 2rem;
+}
+
+.days-image {
+	display: inline-block;
+	width: 15rem;
+	height: 25rem;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.animals-image {
+	display: inline-block;
+	width: 15rem;
+	height: 15rem;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.animals-image-p {
+	margin-bottom: 0;
+}
+
+.other-month {
+	display: block;
+	padding: 1rem 0;
+}
+
+.animals-shop {
+	text-align: center;
+	margin-bottom: 5rem;
+}
+
+.animals-shop-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn-sample {
+	width: auto;
+	background-repeat: no-repeat;
+	background-position: left;
+	padding: 0 1rem 0 2.5rem;
+	color: gray;
+}
+
+#page-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    opacity: 0;
+	width: 2rem;
+	height: 2rem;
+	border-top: solid 0.3rem black;
+	border-left: solid 0.3rem black;
+	transform: rotate(45deg);
+}
+#page-top.fade-in {
+    opacity: 0.6;
+    transition: opacity 1s;
+}
