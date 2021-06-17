@@ -8,17 +8,22 @@ window.addEventListener('DOMContentLoaded', function() {
 	(windowW <= 640) ? body.classList.add('sp') : body.classList.add('pc');
 	
 	//画像のリスト作成
-	function createList(pageType, imgFolder, imgList, div) {
+	function createImgList(pageType, imgFolder, imgList, div) {
 		div.innerHTML = "";
 		const imgRoot = (pageType == 'index') ? './img/' : '../img/';
 		const ul = document.createElement('ul');
 		ul.classList.add('image-list');
-		for (const elem of imgList) {
+		
+		imgList.forEach((elem, index) => { 
 			const li = document.createElement('li');
+			
 			const img = document.createElement('img');
 			img.src = imgRoot + imgFolder + '/' + elem.imgName;
+			if (index >= 3 || pageType == 'index') img.loading = 'lazy';
+			
 			const p = document.createElement('p');
 			p.innerText = elem.caption;
+			
 			if (pageType == 'animals') {
 				img.classList.add('animals-image');
 				p.classList.add('animals-image-p');
@@ -26,6 +31,7 @@ window.addEventListener('DOMContentLoaded', function() {
 				img.classList.add('days-image');
 				p.classList.add('days-image-p');
 			}
+			
 			li.appendChild(img);
 			li.appendChild(p);
 			
@@ -35,6 +41,7 @@ window.addEventListener('DOMContentLoaded', function() {
 				const suzuriUrl = elem.suzuri;
 				const divIcon = document.createElement('p');
 				divIcon.classList.add('icon-btn-outer');
+				
 				if (lineUrl != '') {
 					const lineBtn = document.createElement('a');
 					lineBtn.href = 'https://line.me/S/sticker/' + lineUrl;
@@ -42,6 +49,7 @@ window.addEventListener('DOMContentLoaded', function() {
 					lineBtn.classList.add('icon-btn','btn-line');
 					divIcon.appendChild(lineBtn);
 				}
+				
 				if (suzuriUrl != '') {
 					const suzuriBtn = document.createElement('a');
 					suzuriBtn.href = 'https://suzuri.jp/ichomae/omoide/' + suzuriUrl;
@@ -51,9 +59,8 @@ window.addEventListener('DOMContentLoaded', function() {
 				}
 				li.appendChild(divIcon)
 			}
-			
 			ul.appendChild(li);
-		}
+		});
 		div.appendChild(ul);
 	};
 	
@@ -63,7 +70,7 @@ window.addEventListener('DOMContentLoaded', function() {
 		const imgList = daysData[0].imgList.slice(0, 3);
 		const div = document.getElementById('days-latest');
 		//画像リスト作成
-		createList('index', month, imgList, div);
+		createImgList('index', month, imgList, div);
 	}
 	
 	//日々のページ
@@ -91,7 +98,7 @@ window.addEventListener('DOMContentLoaded', function() {
 		//画像リスト作成
 		const div = document.getElementById('days-monthly');
 		document.getElementById('days-monthly-h2').innerText = monthStr;
-		createList('days', month, imgList, div);
+		createImgList('days', month, imgList, div);
 		//他の月を選択したとき
 		monthSelect.addEventListener('change', function(){
 			month = monthSelect.value;
@@ -101,7 +108,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			monthStr = createMonthStr(month);
 			document.getElementById('days-monthly-h2').innerText = monthStr;
 			//画像リスト作成
-			createList('days', month, imgList, div);
+			createImgList('days', month, imgList, div);
 		});
 	}
 	
@@ -120,7 +127,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			div.classList.add('image-list-outer');
 			const imgList = elem.imgList;
 			//画像リスト作成
-			createList('animals','animals', imgList, div);
+			createImgList('animals','animals', imgList, div);
 			section.appendChild(h2);
 			section.appendChild(p);
 			section.appendChild(div);
