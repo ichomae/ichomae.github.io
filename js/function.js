@@ -10,23 +10,23 @@ window.addEventListener('DOMContentLoaded', function() {
 	//画像のリスト作成
 	function createList(pageType, imgFolder, imgList, div) {
 		div.innerHTML = "";
-		const imgRoot = (pageType == 'index') ? 'url(img/' : 'url(../img/';
+		const imgRoot = (pageType == 'index') ? './img/' : '../img/';
 		const ul = document.createElement('ul');
 		ul.classList.add('image-list');
 		for (const elem of imgList) {
 			const li = document.createElement('li');
-			const span = document.createElement('span');
-			span.style.backgroundImage = imgRoot + imgFolder + '/' + elem.imgName + ')';
+			const img = document.createElement('img');
+			img.src = imgRoot + imgFolder + '/' + elem.imgName;
 			const p = document.createElement('p');
 			p.innerText = elem.caption;
 			if (pageType == 'animals') {
-				span.classList.add('animals-image');
+				img.classList.add('animals-image');
 				p.classList.add('animals-image-p');
 			} else {
-				span.classList.add('days-image');
+				img.classList.add('days-image');
 				p.classList.add('days-image-p');
 			}
-			li.appendChild(span);
+			li.appendChild(img);
 			li.appendChild(p);
 			
 			//動物たちのショップアイコン表示
