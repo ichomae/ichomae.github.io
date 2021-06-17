@@ -1,1 +1,86 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>ichomae家の日々｜ichomaeなホームページ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="イラストレーター,LINEスタンプ,suzuri">
+<meta name="description" content="イラストレーター ichomae の個人サイトです。">
+<meta name="author" content="ichomae">
 
+<link rel="stylesheet" href="../style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+
+<meta property='og:locale' content="ja_JP" />
+<meta property="fb:app_id" content="Facebook App ID" />
+<meta property='og:site_name' content="ichomaeなホームページ" />
+<meta property='og:title' content="ichomae家の日々" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@ichomae_shop" />
+<meta property="og:description" content="イラストレーター ichomae の個人サイトです。" />
+<meta property="og:url" content="https://ichomae.github.io/days/" />
+<meta property="og:type" content="website" />
+<meta name="twitter:image" content="../img/shareTwitter.png">
+<meta property="og:image" content="../img/shareTwitter.png" />
+<meta property="og:image:width" content="1200" /> 
+<meta property="og:image:height" content="600" />
+
+<script src="../js/daysData.js" defer></script>
+<script src="../js/function.js" defer></script>
+</head>
+
+<body id="days">
+	<header>
+		<a class="header-title" href="../">
+			ichomae
+		</a>
+		<nav>
+			<input type="checkbox" id="menu-btn-check">
+			<label for="menu-btn-check" class="menu-btn"><span class="menu-btn-icon"></span></label>
+			<div class="menu-content">
+				<ul>
+					<li>
+						<a href="../">トップページ</a>
+					</li>
+					<li>
+						<a href="./">ichomae家の日々</a>
+					</li>
+					<li>
+						<a href="../animals/">ichomaeな動物たち</a>
+					</li>
+					<li>
+						<a href="https://line.me/S/shop/sticker/author/2103262" target="_blank">LINEスタンプ</a>
+					</li>
+					<li>
+						<a href="https://suzuri.jp/ichomae" target="_blank">SUZURI</a>
+					</li>
+					<li>
+						<a href="https://twitter.com/intent/follow?screen_name=ichomae_shop" target="_blank">Twitter</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<h1>ichomae家の<br class="br-sp"/>日々</h1>
+		<section class="category">
+			<h2 id="days-monthly-h2"></h2>
+			<div class="other-month">
+				<label for="monthly-select">他の月を見る</label>
+				<select name="month" id="monthly-select"></select>
+			</div>
+			<div class="image-list-outer" id="days-monthly">
+				<!--画像リスト予定地-->
+			</div>
+		</section>
+		<div id="page-top"></div>
+	</main>
+	<footer>
+		<a class="footer-title" href="../">
+			ichomae
+		</a>
+		<small class="footer-copyright">© 2021 ichomae</small>
+	</footer>
+</body>
+</html>
