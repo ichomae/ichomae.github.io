@@ -229,13 +229,11 @@ p {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	align-items: center;
 }
 
 #index.sp .image-list {
 	display: flex;
 	justify-content: center;
-	align-items: center;
 }
 
 .image-list li {
@@ -244,6 +242,9 @@ p {
 
 .pc .image-list li {
 	width: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 #index.sp .image-list li {
@@ -257,29 +258,11 @@ p {
 .days-image {
 	display: inline-block;
 	width: 100%;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.days-image:before {
-	content: "";
-	display: inline-block;
-	padding-top: 193%;
 }
 
 .animals-image {
 	display: inline-block;
 	width: 90%;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.animals-image:before {
-	content: "";
-	display: inline-block;
-	padding-top: 100%;
 }
 
 .animals-shop {
