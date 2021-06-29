@@ -16,6 +16,7 @@ const animalsData = [
 	{"h2":"ほかの動物たち", "p":"ゆるく過ごしています", "imgList":
 		[
 			{"imgName":"010.png", "caption":"編み物をするヒツジ", "line":"14631172","suzuri":"98350"},
+			{"imgName":"026.png", "caption":"扇風機にあたるライオン", "line":"","suzuri":"100104"},
 			{"imgName":"023.png", "caption":"勝手にどっか行くネコ", "line":"","suzuri":"98809"},
 			{"imgName":"018.png", "caption":"一緒に帰るクマ", "line":"","suzuri":"98365"},
 			{"imgName":"017.png", "caption":"カクテルを作るラッコ", "line":"","suzuri":"98364"},
